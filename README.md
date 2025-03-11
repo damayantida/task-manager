@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Task Manager App
 
-## Getting Started
+This is a simple **Task Management Application** built with **Next.js, TypeScript, Tailwind CSS, and Jotai**. The app allows users to create, edit, delete, and manage tasks using drag-and-drop functionality.
 
-First, run the development server:
+## 🚀 Live Demo
+[Click here to view the live demo](https://task-manager-damay.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 📌 Features
+✅ Create a task with **title, description, priority, and progress**  
+✅ Edit a task (title, description, priority)  
+✅ Delete a task  
+✅ Drag and drop to change task status  
+✅ Uses **local storage** to persist tasks  
+✅ **Jotai for state management**  
+✅ **Responsive UI optimized for desktop**  
+
+---
+
+## 🛠 Tech Stack
+- **Next.js 15** - React-based framework
+- **TypeScript** - Statically typed JavaScript
+- **Tailwind CSS** - Utility-first styling
+- **Jotai** - Lightweight state management
+- **Dnd-Kit** - Drag and drop functionality
+- **Local Storage** - Persisting task data
+
+---
+
+## 📂 Folder Structure
+```
+/src
+  ├── components
+  │   ├── TaskBoard.tsx  # Main task board component
+  │   ├── TaskColumn.tsx  # Columns (To Do, In Progress, Done)
+  │   ├── TaskCard.tsx  # Individual task component
+  │   ├── TaskForm.tsx  # Form to create/edit tasks
+  ├── store
+  │   ├── tasks.ts  # Jotai state management for tasks
+  ├── app
+  │   ├── layout.tsx  # Layout wrapper
+  │   ├── page.tsx  # Main page
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔧 Setup Instructions
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/damayantida/task-manager.git
+cd task-manager
+```
+### 2️⃣ Install Dependencies
+```sh
+npm install
+```
+### 3️⃣ Run Locally
+```sh
+npm run dev
+```
+### 4️⃣ Open in Browser
+Visit **`http://localhost:3000`** to see the app in action.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🏗️ Chosen Approach
+### **State Management**
+- Used **Jotai** for simple and efficient state handling.
+- Avoided Redux/Zustand since Jotai is lightweight and works well for this project.
 
-To learn more about Next.js, take a look at the following resources:
+### **Storage Solution**
+- Used **Local Storage** to persist tasks, so they remain after a page refresh.
+- No API or database was used as per the requirements.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **Drag-and-Drop Handling**
+- Used **Dnd-Kit** for smooth task movement between columns.
+- Each column is a droppable area, and tasks are draggable.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **UI Components & Styling**
+- Built with **Tailwind CSS** for faster styling and responsiveness.
+- Focused on **desktop view (1024px min width)** as per requirements.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚠️ Known Issues
+- None for now! If any issues arise, they will be documented here.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🌟 Potential Improvements
+If given more time, I would:
+- Add **task sorting options** (by priority, date, or title).
+- Improve **animations** for smoother interactions.
+- Add **filters & search functionality**.
+- Implement **dark mode** for better accessibility.
+
