@@ -3,7 +3,12 @@
 import { useAtom } from 'jotai';
 import TaskColumn from './TaskColumn';
 import { tasksAtom, Task, defaultTasks } from '../store/tasks';
-import { DndContext, DragEndEvent, DragOverlay } from '@dnd-kit/core';
+import {
+	DndContext,
+	DragEndEvent,
+	DragStartEvent,
+	DragOverlay,
+} from '@dnd-kit/core';
 import { useEffect, useState } from 'react';
 import TaskCard from './TaskCard';
 import { motion } from 'framer-motion';
@@ -25,7 +30,7 @@ const TaskBoard = () => {
 			localStorage.setItem('tasks', JSON.stringify(defaultTasks));
 		}
 		setTimeout(() => setIsHydrated(true), 300);
-	}, []);
+	}, [setTasks]);
 
 	// Save tasks to Local Storage whenever they change (only after hydration)
 	useEffect(() => {
@@ -34,7 +39,7 @@ const TaskBoard = () => {
 		}
 	}, [tasks, isHydrated]);
 
-	const handleDragStart = (event: any) => {
+	const handleDragStart = (event: DragStartEvent) => {
 		const taskId = event.active.id;
 		const task = tasks.find((task) => task.id === taskId);
 		if (task) setActiveTask(task);

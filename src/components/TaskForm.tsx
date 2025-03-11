@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { tasksAtom, Task } from '../store/tasks';
 
 const TaskForm = () => {
-	const [tasks, setTasks] = useAtom(tasksAtom);
+	const [, setTasks] = useAtom(tasksAtom);
 	const [title, setTitle] = useState('');
 	const [description, setDescription] = useState('');
 	const [priority, setPriority] = useState<'Low' | 'Medium' | 'High'>('Medium');

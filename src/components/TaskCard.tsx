@@ -3,6 +3,7 @@ import { useAtom } from 'jotai';
 import { useEffect, useState } from 'react';
 import { useDraggable } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
+import Image from 'next/image';
 
 const TaskCard = ({
 	task,
@@ -98,7 +99,7 @@ const TaskCard = ({
 						{...(!isDragging ? attributes : {})}
 						{...(!isDragging ? listeners : {})}
 					>
-						<img
+						<Image
 							src={priorityIcon}
 							alt='priority icon'
 							className='absolute top-3 left-2'
@@ -118,13 +119,13 @@ const TaskCard = ({
 							onClick={() => setIsEditing(true)}
 							className='cursor-pointer hover:scale-90 transition-all duration-300 ease-in-out'
 						>
-							<img src='/edit.svg' alt='edit icon' />
+							<Image src='/edit.svg' alt='edit icon' />
 						</button>
 						<button
 							onClick={deleteTask}
 							className='cursor-pointer hover:scale-90 transition-all duration-300 ease-in-out'
 						>
-							<img src='/trash.svg' alt='delete icon' />
+							<Image src='/trash.svg' alt='delete icon' />
 						</button>
 					</div>
 				</>
